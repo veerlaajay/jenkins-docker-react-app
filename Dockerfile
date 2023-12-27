@@ -5,6 +5,6 @@ RUN apt install -y apache2-utils
 RUN apt clean
 RUN rm -rf /var/www/html/index.html
 COPY . /var/www/html
-RUN service apache2 reload
+RUN systemctl restart apache2
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
