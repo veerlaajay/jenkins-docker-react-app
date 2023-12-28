@@ -6,7 +6,7 @@
 const heading = React.createElement("h1", {
 
     id : "heading",
-},"Hello World from React")
+},"Welcome to 2024-by DevOps Freaks")
 
 
 
