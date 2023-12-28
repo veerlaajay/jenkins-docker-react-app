@@ -12,7 +12,7 @@ const heading = React.createElement("h1", {
 
 const gparent = React.createElement("div", {id: "gparent"}, 
  React.createElement("div", {id: "parent"},
-[React.createElement("h1", {id: "child"}, "Hello World from React")]))
+[React.createElement("h1", {id: "child"}, "Welcome to 2024-by DevOps Freaks")]))
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
