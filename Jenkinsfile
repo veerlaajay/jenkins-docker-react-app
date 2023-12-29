@@ -4,7 +4,7 @@ node {
     }
     
     stage('Build image') {
-       dockerImage = docker.build("cloudwithraghu/react-app-2:latest")
+       dockerImage = docker.build("cloudwithraghu/react-app:latest")
     }
     
  stage('Push image') {
@@ -14,12 +14,13 @@ node {
     }    
 
  stage('Kill the previous Container') {
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
         sh "docker stop container react-app"
  
         }
 
  stage('Run Docker container on Jenkins Server itself') {
-        sh "docker run -d --name react-app -p 80:80 cloudwithraghu/react-app-2:latest"
+        sh "docker run -d --name react-container -p 80:80 cloudwithraghu/react-app:latest"
  
         }
 }
