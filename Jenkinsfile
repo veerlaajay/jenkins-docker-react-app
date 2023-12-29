@@ -18,7 +18,7 @@ node {
           sh "docker stop container react-app"
           }
         catch (exc) {
-          sh "docker run -d --name react-container -p 80:80 cloudwithraghu/react-app:latest"
+          sh "docker run -d --name react-app -p 80:80 cloudwithraghu/react-app:latest"
      
              }
         }
