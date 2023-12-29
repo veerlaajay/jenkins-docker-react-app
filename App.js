@@ -6,13 +6,13 @@
 const heading = React.createElement("h1", {
 
     id : "heading",
-},"DevOps")
+},"Azure DevOps")
 
 
 
 const gparent = React.createElement("div", {id: "gparent"}, 
  React.createElement("div", {id: "parent"},
-[React.createElement("h1", {id: "child"}, "Happy DevOps Days")]))
+[React.createElement("h1", {id: "child"}, "Azure Devops")]))
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
