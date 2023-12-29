@@ -13,14 +13,14 @@ node {
         }
     }    
 
- stage('Kill the previous Container') {
-        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
-        sh "docker stop container react-app"
- 
+ stage('Stop the container') {
+        try {
+          sh "docker stop container react-app"
+          }
+        catch (exc) {
+          sh "docker run -d --name react-container -p 80:80 cloudwithraghu/react-app:latest"
+     
+             }
         }
 
- stage('Run Docker container on Jenkins Server itself') {
-        sh "docker run -d --name react-container -p 80:80 cloudwithraghu/react-app:latest"
- 
-        }
-}
+ }
