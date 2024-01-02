@@ -1,6 +1,6 @@
 node {   
     stage('Clone repository') {
-        git credentialsId: 'Githubcredentials', url: 'https://github.com/CloudWithRaghu/jenkins-react-app.git'
+        git credentialsId: 'Github-creds', url: 'https://github.com/CloudWithRaghu/jenkins-react-app.git'
     }
     
     stage('Build image') {
@@ -8,7 +8,7 @@ node {
     }
     
  stage('Push image') {
-        withDockerRegistry([ credentialsId: "dockerhubcredentials", url: "" ]) {
+        withDockerRegistry([ credentialsId: "dockerhub-creds", url: "" ]) {
         dockerImage.push()
         }
     }    
