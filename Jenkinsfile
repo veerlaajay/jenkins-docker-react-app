@@ -1,5 +1,5 @@
 node {   
-    stage('Clone repository') {
+    stage('Clone Github repository') {
         git credentialsId: 'Github-creds', url: 'https://github.com/CloudWithRaghu/jenkins-react-app.git'
     }
     
