@@ -1,8 +1,5 @@
 node {   
-    stage('Clone Github repository') {
-        git credentialsId: 'Github-creds', url: 'https://github.com/CloudWithRaghu/jenkins-react-app.git'
-    }
-    
+        
     stage('Build image') {
        dockerImage = docker.build("cloudwithraghu/react-app:latest")
     }
