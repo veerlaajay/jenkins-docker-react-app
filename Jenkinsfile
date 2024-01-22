@@ -4,7 +4,7 @@ node {
     }
     
     stage('Build image') {
-       dockerImage = docker.build("veerlaajay/react-app400:latest")
+       dockerImage = docker.build("veerlaajay/react-app500:latest")
     }
     
     stage('Push image') {
@@ -18,7 +18,7 @@ node {
     }
         
     stage('Run the container Locally on the Jenkins server') {
-        sh "docker run -itd --name react-app -p 80:80 veerlaajay/react-app400:latest"
+        sh "docker run -itd --name react-app -p 80:80 veerlaajay/react-app500:latest"
      
     }
   }
